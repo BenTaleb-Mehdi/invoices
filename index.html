@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturely</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href='https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="style/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="overflow-x-hidden w-full h-screen">
+
+
+<nav class="fixed top-0 left-1/2 w-[95%] sm:w-[70%] h-16 bg-white border border-gray-200 flex items-center justify-between px-10 -translate-x-1/2 z-50 rounded-full mt-7">
+    <div class="w-full flex items-center justify-between">
+        <h2 class="font-bold"><a href="index.html">Facturely</a></h2>
+        <button class="show_menu cursor-pointer text-xl block sm:hidden">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+    <ul class="hidden sm:flex items-center px-4 gap-5">
+        <li class="border-b-2 border-transparent hover:border-gray-500 transition duration-300"><a href="">Home</a></li>
+        <li class="border-b-2 border-transparent hover:border-gray-500 transition duration-300"><a href="">About</a></li>
+        <li class="border-b-2 border-transparent hover:border-gray-500 transition duration-300"><a href="">Services</a></li>
+        <li class="border-b-2 border-transparent hover:border-gray-500 transition duration-300"><a href="">Contact</a></li>
+        <li class=" border-transparent hover:border-gray-500 transition duration-300"><a class="flex items-center gap-1" href="pages/login.html"><i class="fa-regular fa-user"></i> Login</a></li>
+    </ul>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="menu fixed  top-0 right-0 h-screen w-[70%] sm:hidden bg-white py-5 px-6 flex flex-col items-center justify-start transform translate-x-full transition-transform duration-300 z-50 shadow-lg rounded-l-lg overflow-y-auto">
+    <button class="close_menu absolute top-5 right-5 hover:scale-125 transition cursor-pointer text-xl">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    <ul class="flex flex-col gap-6 w-full mt-10">
+        <li class="border-b-2 border-transparent hover:border-gray-500 transition duration-300 cursor-pointer p-2"><a href="#">Home</a></li>
+        <li class="border-b-2 border-transparent hover:border-gray-500 transition duration-300 cursor-pointer p-2"><a href="#">About</a></li>
+        <li class="border-b-2 border-transparent hover:border-gray-500 transition duration-300 cursor-pointer p-2"><a href="#">Services</a></li>
+        <li class="border-b-2 border-transparent hover:border-gray-500 transition duration-300 cursor-pointer p-2"><a href="#">Contact</a></li>
+    </ul>
+</div>
+
+    <!-- Hero -->
+<div class="max-w-[85rem] hidden-anim mx-auto px-4 sm:px-6 lg:px-8 relative mt-30 sm:mt-35"> <!-- add mt-32 or mt-[calc(nav height + extra)] -->
+  <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
+    <div>
+      <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight">Simplify Your Invoicing with <span class="text-blue-600">Facturely</span></h1>
+      <p class="mt-3 text-lg text-gray-800">Create, send, and manage invoices effortlessly — anytime, anywhere</p>
+
+      <!-- Buttons -->
+      <div class="mt-7 grid gap-3 w-full sm:inline-flex">
+        <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
+        Get Started (Free)
+          <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="#">
+         Watch Demo
+        </a>
+      </div>
+      <!-- End Buttons -->
+
+    </div>
+    <!-- End Col -->
+
+    <div class="relative ms-4">
+      <img class="w-full rounded-md" src="imges/invoice-hero.jpg" alt="Hero Image">
+      <div class="absolute inset-0 -z-1 bg-linear-to-tr from-gray-200 via-white/0 to-white/0 size-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6"></div>
+
+      <!-- SVG-->
+      <div class="absolute bottom-0 start-0">
+        <svg class="w-2/3 ms-auto h-auto text-white" width="630" height="451" viewBox="0 0 630 451" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="531" y="352" width="99" height="99" fill="currentColor"/>
+          <rect x="140" y="352" width="106" height="99" fill="currentColor"/>
+          <rect x="482" y="402" width="64" height="49" fill="currentColor"/>
+          <rect x="433" y="402" width="63" height="49" fill="currentColor"/>
+          <rect x="384" y="352" width="49" height="50" fill="currentColor"/>
+          <rect x="531" y="328" width="50" height="50" fill="currentColor"/>
+          <rect x="99" y="303" width="49" height="58" fill="currentColor"/>
+          <rect x="99" y="352" width="49" height="50" fill="currentColor"/>
+          <rect x="99" y="392" width="49" height="59" fill="currentColor"/>
+          <rect x="44" y="402" width="66" height="49" fill="currentColor"/>
+          <rect x="234" y="402" width="62" height="49" fill="currentColor"/>
+          <rect x="334" y="303" width="50" height="49" fill="currentColor"/>
+          <rect x="581" width="49" height="49" fill="currentColor"/>
+          <rect x="581" width="49" height="64" fill="currentColor"/>
+          <rect x="482" y="123" width="49" height="49" fill="currentColor"/>
+          <rect x="507" y="124" width="49" height="24" fill="currentColor"/>
+          <rect x="531" y="49" width="99" height="99" fill="currentColor"/>
+        </svg>
+      </div>
+      <!-- End SVG-->
+    </div>
+    <!-- End Col -->
+  </div>
+  <!-- End Grid -->
+</div>
+<!-- End Hero -->
+
+
+<!-- Features -->
+<div class="max-w-[85rem] hidden-anim px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+
+
+  <!-- Grid -->
+  <div class="mt-5 lg:mt-16 grid lg:grid-cols-3 gap-8 lg:gap-12 ">
+  <div class="w-full hidden-anim rounded-xl overflow-hidden">
+    <img class="w-full h-80 object-cover" src="imges/img-about.jpg" alt="Features Image">
+  </div>
+    <!-- End Col -->
+
+    <div class="lg:col-span-2 p-14 hidden-anim">
+      <div class="grid sm:grid-cols-2 gap-8 md:gap-12">
+        <!-- Icon Block -->
+        <div class="flex gap-x-5">
+          <svg class="shrink-0 mt-1 size-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="10" x="3" y="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" x2="8" y1="16" y2="16"/><line x1="16" x2="16" y1="16" y2="16"/></svg>
+          <div class="grow">
+            <h3 class="text-lg font-semibold text-gray-800">
+           Manage Clients Easily
+            </h3>
+            <p class="mt-1 text-gray-600">
+               Store and organize client info securely.
+            </p>
+          </div>
+        </div>
+        <!-- End Icon Block -->
+
+        <!-- Icon Block -->
+        <div class="flex gap-x-5">
+          <svg class="shrink-0 mt-1 size-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+          <div class="grow">
+            <h3 class="text-lg font-semibold text-gray-800">
+                Generate Invoices in Seconds
+            </h3>
+            <p class="mt-1 text-gray-600">
+               Create professional invoices instantly.
+            </p>
+          </div>
+        </div>
+        <!-- End Icon Block -->
+
+        <!-- Icon Block -->
+        <div class="flex gap-x-5">
+          <svg class="shrink-0 mt-1 size-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <div class="grow">
+            <h3 class="text-lg font-semibold text-gray-800">
+            Track Payments
+            </h3>
+            <p class="mt-1 text-gray-600">
+              Monitor all transactions and payment status.
+            </p>
+          </div>
+        </div>
+        <!-- End Icon Block -->
+
+        <!-- Icon Block -->
+        <div class="flex gap-x-5">
+          <svg class="shrink-0 mt-1 size-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div class="grow">
+            <h3 class="text-lg font-semibold text-gray-800">
+             Cloud Sync
+            </h3>
+            <p class="mt-1 text-gray-600">
+              Access your invoices from anywhere.
+            </p>
+          </div>
+        </div>
+        <!-- End Icon Block -->
+      </div>
+    </div>
+    <!-- End Col -->
+  </div>
+  <!-- End Grid -->
+</div>
+<!-- End Features -->
+
+
+<!-- Pricing -->
+<div class="max-w-[85rem] hidden-anim px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <!-- Title -->
+  <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+    <h2 class="text-2xl font-bold md:text-4xl md:leading-tight">Pricing</h2>
+    <p class="mt-1 text-gray-600">Whatever your status, our offers evolve according to your needs.</p>
+  </div>
+  <!-- End Title -->
+  <!-- Grid -->
+  <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:items-center lg:justify-center ms:p-5">
+    <!-- Card -->
+    <div class="flex flex-col border border-gray-200 text-center rounded-xl p-8">
+      <h4 class="font-medium text-lg text-gray-800">ree Plan</h4>
+      <span class="mt-7 font-bold text-5xl text-gray-800">Free</span>
+      <p class="mt-2 text-sm text-gray-500">Forever free</p>
+
+      <ul class="mt-7 space-y-2.5 text-sm">
+        <li class="flex gap-x-2">
+          <svg class="shrink-0 mt-0.5 size-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span class="text-gray-800">
+            Up to 3 clients
+          </span>
+        </li>
+
+        <li class="flex gap-x-2">
+          <svg class="shrink-0 mt-0.5 size-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span class="text-gray-800">
+            10 invoices per month
+          </span>
+        </li>
+
+        <li class="flex gap-x-2">
+          <svg class="shrink-0 mt-0.5 size-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span class="text-gray-800">
+            Basic analytics
+          </span>
+        </li>
+      </ul>
+
+      <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-50" href="#">
+        Basic analytics
+      </a>
+    </div>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <div class="flex flex-col border-2 border-blue-600 text-center shadow-xl rounded-xl p-8">
+      <p class="mb-3"><span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs uppercase font-semibold bg-blue-100 text-blue-800">Most popular</span></p>
+      <h4 class="font-medium text-lg text-gray-800">Pro Plan</h4>
+      <span class="mt-5 font-bold text-5xl text-gray-800">
+        <span class="font-bold text-2xl -me-2">MAD</span>
+        299
+      </span>
+      <p class="mt-2 text-sm text-gray-500">All the basics for starting a new business</p>
+
+      <ul class="mt-7 space-y-2.5 text-sm">
+        <li class="flex gap-x-2">
+          <svg class="shrink-0 mt-0.5 size-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span class="text-gray-800">
+           Unlimited invoices and clients
+          </span>
+        </li>
+
+        <li class="flex gap-x-2">
+          <svg class="shrink-0 mt-0.5 size-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span class="text-gray-800">
+            Download invoices as PDF
+          </span>
+        </li>
+
+        <li class="flex gap-x-2">
+          <svg class="shrink-0 mt-0.5 size-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span class="text-gray-800">
+          Advanced analytics and professional dashboard
+          </span>
+        </li>
+
+        <li class="flex gap-x-2">
+          <svg class="shrink-0 mt-0.5 size-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span class="text-gray-800">
+        Priority customer support
+          </span>
+        </li>
+      </ul>
+
+      <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
+        Upgrade to Pro
+      </a>
+    </div>
+    <!-- End Card -->
+  </div>
+  <!-- End Grid -->
+</div>
+<!-- End Pricing -->
+
+ 
+<!-- Features -->
+<div class="max-w-[85rem] hidden-anim px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div class="relative p-6 md:p-16">
+    <!-- Grid -->
+    <div class="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
+      <div class="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
+        <h2 class="text-2xl text-gray-800 font-bold sm:text-3xl">
+         Facturely gives you full control through a clean and powerful dashboard.
+        </h2>
+
+        <!-- Tab Navs -->
+        <nav class="grid gap-4 mt-5 md:mt-10" aria-label="Tabs" role="tablist" aria-orientation="vertical">
+          <button type="button" class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 p-4 md:p-5 rounded-xl active" id="tabs-with-card-item-1" aria-selected="true" data-hs-tab="#tabs-with-card-1" aria-controls="tabs-with-card-1" role="tab">
+            <span class="flex gap-x-6">
+              <i class="fa-regular fa-user mt-2 text-2xl"></i>
+              <span class="grow">
+                <span class="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800">Client Management</span>
+                <span class="block mt-1 text-gray-800">Add, edit, and organize all your clients with ease. Keep contact details, invoices, and payment history in one place.</span>
+              </span>
+            </span>
+          </button>
+
+          <button type="button" class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 p-4 md:p-5 rounded-xl " id="tabs-with-card-item-2" aria-selected="false" data-hs-tab="#tabs-with-card-2" aria-controls="tabs-with-card-2" role="tab">
+            <span class="flex gap-x-6">
+              <i class="fa-regular fa-chart-bar mt-2 text-2xl"></i>
+              <span class="grow">
+                <span class="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800">Invoice Statistics</span>
+                <span class="block mt-1 text-gray-800">Visualize your income and track performance with clear analytics and charts.</span>
+              </span>
+            </span>
+          </button>
+
+          <button type="button" class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 p-4 md:p-5 rounded-xl" id="tabs-with-card-item-3" aria-selected="false" data-hs-tab="#tabs-with-card-3" aria-controls="tabs-with-card-3" role="tab">
+            <span class="flex gap-x-6">
+              <i class='bx  bx-lock-keyhole-open-alt mt-2 text-2xl'    ></i> 
+              <span class="grow">
+                <span class="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800">Flexible Team Permissions</span>
+                <span class="block mt-1 text-gray-800">Give every team member the right access — from admins to accountants — for smooth and secure collaboration.</span>
+              </span>
+            </span>
+          </button>
+        </nav>
+        <!-- End Tab Navs -->
+      </div>
+      <!-- End Col -->
+
+      <div class="lg:col-span-6">
+        <div class="relative">
+          <!-- Tab Content -->
+          <div>
+            <div id="tabs-with-card-1"  role="tabpanel" aria-labelledby="tabs-with-card-item-1">
+              <img class="shadow-xl shadow-gray-200 rounded-xl" src="imges/client-managemment.jpg" alt="Features Image">
+            </div>
+
+            <div id="tabs-with-card-2" class="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-2">
+              <img class="shadow-xl shadow-gray-200 rounded-xl" src="imges/statistique.jpg" alt="Features Image">
+            </div>
+
+            <div id="tabs-with-card-3" class="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-3">
+              <img class="shadow-xl shadow-gray-200 rounded-xl" src="imges/team.jpg" alt="Features Image">
+            </div>
+          </div>
+          <!-- End Tab Content -->
+
+          <!-- SVG Element -->
+          <div class="hidden absolute top-0 end-0 translate-x-20 md:block lg:translate-x-20">
+            <svg class="w-16 h-auto text-orange-500" width="121" height="135" viewBox="0 0 121 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+              <path d="M33.6761 112.104C44.6984 98.1239 74.2618 57.6776 83.4821 5" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+              <path d="M50.5525 130C68.2064 127.495 110.731 117.541 116 78.0874" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <!-- End SVG Element -->
+        </div>
+      </div>
+      <!-- End Col -->
+    </div>
+    <!-- End Grid -->
+
+    <!-- Background Color -->
+    <div class="absolute inset-0 grid grid-cols-12 size-full">
+      <div class="col-span-full lg:col-span-7 lg:col-start-6 bg-gray-100 w-full h-5/6 rounded-xl sm:h-3/4 lg:h-full"></div>
+    </div>
+    <!-- End Background Color -->
+  </div>
+</div>
+<!-- End Features -->
+<!-- Subscribe -->
+<div class="max-w-[85rem] hidden-anim px-4 py-10 sm:px-6 lg:px-8 lg:py-16 mx-auto">
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="max-w-md">
+      <h2 class="text-2xl font-bold md:text-3xl md:leading-tight">Subscribe</h2>
+      <p class="mt-3 text-gray-600">
+        Subscribe and start making the most of every engagement.
+      </p>
+    </div>
+
+    <form>
+      <div class="w-full sm:max-w-lg md:ms-auto">
+        <div class="flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
+          <div class="w-full">
+            <label for="hero-input" class="sr-only">Search</label>
+            <input type="text" id="hero-input" name="hero-input" class="py-2.5 sm:py-3 px-4 block w-full border border-gray-300 rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Enter your email">
+          </div>
+          <a class="w-full sm:w-auto whitespace-nowrap py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
+            Subscribe
+          </a>
+        </div>
+        <p class="mt-3 text-sm text-gray-500">
+          No spam, unsubscribe at any time
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- End Subscribe -->
+
+
+<!-- ========== FOOTER ========== -->
+<footer class="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+  <!-- Grid -->
+  <div class="text-center">
+    <div>
+      <a class="flex-none text-xl font-semibold text-black" href="#" aria-label="Brand">Facturely</a>
+    </div>
+    <!-- End Col -->
+
+<div class="mt-3 text-gray-500">
+  <p>Built with by <a href="#" class="text-blue-600 font-medium hover:underline">Facturely Team</a></p>
+  <p>© 2025 <span class="font-semibold text-gray-700">Facturely</span>. All rights reserved.</p>
+</div>
+
+
+    <!-- Social Brands -->
+  <div class="mt-3 space-x-2">
+      <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="#">
+        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+        </svg>
+      </a>
+      <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="#">
+        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+        </svg>
+      </a>
+      <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="#">
+        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+      </a>
+      <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="#">
+        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M3.362 10.11c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.682 1.68-1.682h4.21zm6.749 1.682c0-.926.755-1.682 1.68-1.682.925 0 1.681.756 1.681 1.681s-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z"/>
+        </svg>
+      </a>
+    </div>
+    <!-- End Social Brands -->
+  </div>
+  <!-- End Grid -->
+</footer>
+<!-- ========== END FOOTER ========== -->
+
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+html{
+    scroll-behavior: smooth;
+}
+
+  /* Hidden animation classes */
+    .hidden-anim {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+
+    .show-anim {
+      opacity: 1;
+      transform: translateY(0);
+    }
